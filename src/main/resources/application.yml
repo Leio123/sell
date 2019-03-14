@@ -1,0 +1,41 @@
+#配置文件
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: yanglei
+    url: jdbc:mysql://localhost:3306/waimai?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  jpa:
+      show-sql: true
+  #全局配置，输入不能为null
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 127.0.0.1
+    port: 6379
+server:
+  servlet:
+    context-path: /sell
+wechat:
+  mpAppId: wxad09db8697b2ee34
+  mpAppSecret: 9062ca05c3caa340852fcc157d46999c
+  mchId: 1409146202
+  mchKey: c976503d34ca432c601361f969fd8d85
+  #API安全证书？？？？
+  keyPath: /var/wenxin_cert/h5.p12
+  notifyUrl: http://r3ddi9.natappfree.cc/sell/pay/notify
+#设定ftl文件路径
+#  spring.freemarker.template-loader-path=classpath: /templates
+  #设定静态文件路径，js,css等
+# spring.mvc.static-path-pattern=/static/**
+#projecturl:
+#  wechatMpAuthorize: http://buk5hd.natappfree.cc
+#  wechatOpenAuthorize: http://buk5hd.natappfree.cc
+#  sell: http://buk5hd.natappfree.cc
+#设置日志级别
+logging:
+  level:
+    com.imooc.sell.dataobject.mapper: trace
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
